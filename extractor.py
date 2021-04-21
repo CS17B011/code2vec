@@ -13,6 +13,7 @@ class Extractor:
                    str(self.max_path_length), '--max_path_width', str(self.max_path_width), '--file', path, '--no_hash']
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
+        print(out)
         output = out.decode().splitlines()
         print(output)
         if len(output) == 0:
